@@ -1,0 +1,19 @@
+<table>
+	<tr>
+		<td>Start Value:</td>
+		<td><input type="text" [(ngModel)]="startvalue" /></td>
+	</tr>
+	<tr>
+		<td>Height:</td>
+		<td>
+			<input type="text" [(ngModel)]="height" />
+			<span *ngIf="height < 2" class="error-text">Height must be >= 2</span>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><button [disabled]="height < 2" (click)="calculate()">Calculate</button></td>
+	</tr>
+</table>
+
+<div [innerHTML]="result"></div>
